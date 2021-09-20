@@ -12,3 +12,12 @@
     margin-top: 0;
     padding: 15px 0 15px 20px;
 }
+
+.list-low-item:hover {
+    background-color: #414141;
+    transition: 0.3s all;
+}
+
+.list-low-item span {
+    cursor: pointer;
+}

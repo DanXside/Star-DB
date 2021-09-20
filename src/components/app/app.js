@@ -1,23 +1,36 @@
-import React from 'react';
+import React, { Component } from 'react';
 
 
 import Header from '../header';
 import RandomPlanet from '../random-planet';
-import ItemList from '../item-list/item-list';
-import PersonDetails from '../person-details/person-details';
+import SwapiService from '../../services/swapi-service';
+import Row from '../row/row';
+import { SwapiServiceProvider } from '../swapi-service-context/swapi-service-context';
+import { PeoplePage, PlanetsPage, StarshipsPage } from '../pages';
 
 import './app.css';
 
+export default class App extends Component {
+    
+    swapiService = new SwapiService();
 
-const App = () => {
-    return (
-        <div>
-            <Header />
-            <RandomPlanet />
-            <ItemList />
-            <PersonDetails />
-        </div>
-    );
+    render() {
+        return (
+            <div>
+                <SwapiServiceProvider value={this.swapiService}>
+                    <Header />
+
+                    <RandomPlanet />
+
+                    <PeoplePage />
+
+                    <PlanetsPage />
+
+                    <StarshipsPage />
+
+                </SwapiServiceProvider>
+            </div>
+        );
+    }
+    
 };
-
-export default App;
