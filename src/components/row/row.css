@@ -1,4 +1,11 @@
 .people-item {
     box-sizing: border-box;
     padding: 0!important;
+    width: 620px;
+}
+.row {
+    display: flex;
+    justify-content: space-between;
+    width: 1300px;
+    margin: 0 auto;
 }
